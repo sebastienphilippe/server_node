@@ -4,6 +4,7 @@ Imports
     // Nodejs
     const { Router } = require('express');
     const AuthRouterClass = require('./auth/auth.routes');
+    const CategoryRouterClass = require('./category/category.routes');
 //
 
 /* 
@@ -24,6 +25,7 @@ Definition des router
 
     // Child
     const authRouter = new AuthRouterClass();
+    const categoryRouter = new CategoryRouterClass();
 //
 
 /* 
@@ -31,6 +33,7 @@ Définition des routes
 */
     mainRouter.use( '/api', apiRouter );
     apiRouter.use('/auth', authRouter.init());
+    categoryRouter.use('/post', authRouter.init());
 //
 
 /* 
